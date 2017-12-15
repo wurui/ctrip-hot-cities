@@ -1,6 +1,6 @@
 {
   "name": "ctrip-hot-cities",
   "version": "0.0.1",
-  "apiDependencies": ["string-list"]
+  "apiDependencies": ["address","string-list"]
 }
 
