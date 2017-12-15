@@ -14,10 +14,32 @@
         <icon>//oxm1.cc/img/app_default.png</icon>
     </p>
     <data>
-            <string-list>
-        <i>
-            strong mobilephone
-        </i>
-    </string-list>
+        <address>
+            <province>浙江</province>
+            <city>杭州</city>
+        </address>
+        <string-list>
+            <i>北京</i>
+            <i>上海</i>
+            <i>天津</i>
+            <i>哈尔滨</i>
+            <i>青岛</i>
+            <i>西安</i>
+            <i>南京</i>
+            <i>杭州</i>
+            <i>厦门</i>
+            <i>成都</i>
+            <i>深圳</i>
+            <i>广州</i>
+            <i>昆明</i>
+            <i>三亚</i>
+            <i>长沙</i>
+            <i>沈阳</i>
+            <i>武汉</i>
+            <i>郑州</i>
+            <i>济南</i>
+            <i>重庆</i>
+            <i>大连</i>
+        </string-list>
     </data>
 </root>
