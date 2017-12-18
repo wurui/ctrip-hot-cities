@@ -14,6 +14,15 @@ define(['oxjs'],function(OXJS){
     		$('[value="'+city+'"]',$mod).focus()
     	}*/
     	//此处应该是调用接口去修改服务端数据，然后history.back
+        var currentCity=$('[data-current]',$mod).attr('data-current');
+        if(!currentCity){
+            //客户端取一下当前定位，或用
+        }
+        var on_city_set=function(r){
+            if(document.referrer){
+                history.back();
+            }
+        };
     	$mod.on('click','.item',function(e){
     		//console.log('fuck',e.target);
     		$(e.target).addClass('selected').siblings().removeClass('selected')
@@ -37,15 +46,22 @@ define(['oxjs'],function(OXJS){
     			
     		})
             */
-            $mod.OXPut({
-                'user-city':{
-                    city:e.target.value
-                }
-            },function(r){
-                if(document.referrer){
-                    history.back();
-                }
-            })
+            if(!currentCity){
+                
+                $mod.OXPost({
+                    'user-city':{
+                        uid:$mod.attr('ox-uid'),
+                        city:currentCity=e.target.value
+                    }
+                },on_city_set)
+            }else{
+                $mod.OXPut({
+                    'user-city':{
+                        city:e.target.value
+                    }
+                },on_city_set)
+            }
+            
     	})
     }
   }
