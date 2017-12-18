@@ -6,7 +6,7 @@
                 热门城市
             </h3>
             <div class="list">
-            	<xsl:variable select="data/address/city" name="city"/>
+            	<xsl:variable select="data/user-city/i[1]/city" name="city"/>
             	<xsl:for-each select="data/string-list/i">
 
             		<input type="button" class="item" value="{.}">

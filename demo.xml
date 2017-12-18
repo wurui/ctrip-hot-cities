@@ -14,10 +14,9 @@
         <icon>//oxm1.cc/img/app_default.png</icon>
     </p>
     <data>
-        <address>
-            <province>浙江</province>
-            <city>杭州</city>
-        </address>
+        <user-city>
+            <i><city>杭州</city></i>
+        </user-city>
         <string-list>
             <i>北京</i>
             <i>上海</i>
