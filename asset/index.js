@@ -38,7 +38,7 @@ define(['oxjs'],function(OXJS){
     		})
             */
             $mod.OXPut({
-                address:{
+                'user-city':{
                     city:e.target.value
                 }
             },function(r){
