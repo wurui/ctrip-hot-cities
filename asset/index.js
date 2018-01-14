@@ -26,38 +26,21 @@ define(['oxjs'],function(OXJS){
     	$mod.on('click','.item',function(e){
     		//console.log('fuck',e.target);
     		$(e.target).addClass('selected').siblings().removeClass('selected')
-    		//localStorage.setItem(storeKey,e.target.value)
-    		/*
-    		window.opener && window.opener.callback && window.opener.callback(e.target.value);
-    		window.close();
-    		*/
-    		//history.back();
-            /*
-    		OXJS.useModel && OXJS.useModel($mod).put({
-    			address:{
-    				city:e.target.value
-    			}
-    		})
-
-    		OXJS.useREST('address').put({city:e.target.value},function(){
-    			if(document.referrer){
-    				history.back();
-    			}
-    			
-    		})
-            */
+    
             if(!currentCity){
                 
                 $mod.OXPost({
                     'user-city':{
-                        uid:$mod.attr('ox-uid'),
+                        uid:OXJS.getUID(),
                         city:currentCity=e.target.value
                     }
                 },on_city_set)
             }else{
                 $mod.OXPut({
                     'user-city':{
-                        city:e.target.value
+                        city:e.target.value,
+                        uid:OXJS.getUID(),
+                        $updater:'default'
                     }
                 },on_city_set)
             }
