@@ -30,16 +30,18 @@ define(['oxjs'],function(OXJS){
             if(!currentCity){
                 
                 $mod.OXPost({
-                    'user-city':{
-                        uid:OXJS.getUID(),
-                        city:currentCity=e.target.value
+                    'user-select':{
+                        
+                        selected:currentCity=e.target.value,
+                        type:'ui-texts',
+                        $inserter:'default'
                     }
                 },on_city_set)
             }else{
                 $mod.OXPut({
-                    'user-city':{
-                        city:e.target.value,
-                        uid:OXJS.getUID(),
+                    'user-select':{
+                        selected:e.target.value,
+                        
                         $updater:'default'
                     }
                 },on_city_set)
