@@ -2,13 +2,11 @@
     <xsl:template match="/root" name="wurui.ctrip-hot-cities">
         <!-- className 'J_OXMod' required  -->
         <div class="J_OXMod oxmod-ctrip-hot-cities" ox-uid="{login/uid}" ox-mod="ctrip-hot-cities">
-            <h3>
-                热门城市
-            </h3>
-            <xsl:variable select="data/user-city/i[1]/city" name="city"/>
+            
+            <xsl:variable select="data/user-select/i[1]/selected" name="city"/>
             <div class="list" data-current="{$city}">
             	
-            	<xsl:for-each select="data/string-list/i">
+            	<xsl:for-each select="data/ui-texts/i">
 
             		<input type="button" class="item" value="{.}">
             			<xsl:if test=". = $city">

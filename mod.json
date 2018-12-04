@@ -1,6 +1,12 @@
 {
   "name": "ctrip-hot-cities",
   "version": "0.0.1",
-  "apiDependencies": ["user-city","string-list"]
+  "apiDependencies": [
+  	{
+  		"name":"user-select"
+  	},{
+  		"name":"ui-texts"
+  	}
+  ]
 }
 
